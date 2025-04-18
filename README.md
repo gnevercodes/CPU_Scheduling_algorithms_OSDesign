@@ -1,98 +1,93 @@
 
-# 💾 Part 2 – Memory Management: Page Replacement Algorithms
+# 🧠 Operating System Design – Academic Project (Fall 2024)
 
-### 📌 Operating System Design Project – Fall 2024 | University of North Texas  
-🧑‍🏫 Instructor: Prof. Amar M. Maharjan  
-📁 Project 5 of 6 | Focus: Page Replacement Strategy Simulation & Evaluation
+## 🎓 CSCE 5640 – University of North Texas  
+**Instructor:** Prof. Amar M. Maharjan  
+**Team Members:** Ganesh Gundekarla, Shreya Sri Bearelly, Divya Sree Dandu, Vikas Varala  
 
-This project simulates and evaluates five popular page replacement algorithms to understand their efficiency in managing memory pages. Each algorithm is tested using reference strings from input files and frame sizes of 10 and 20. The results are analyzed based on the number of page faults encountered during execution.
-
----
-
-## 🧠 Algorithms Implemented
-
-1. **FIFO (First-In First-Out)** – Replaces the oldest page in memory.
-2. **Optimal** – Replaces the page that will not be used for the longest future duration.
-3. **LRU (Least Recently Used)** – Removes the least recently accessed page.
-4. **LFU (Least Frequently Used)** – Evicts the page with the lowest access frequency.
-5. **MFU (Most Frequently Used)** – Replaces the most frequently used page, assuming it's no longer needed.
-
-Each algorithm is implemented in a separate C++ source file and handles custom reference string input formats.
+This repository contains a two-part academic project on **Operating System Design**, focused on process scheduling and memory management. Each part covers core operating system concepts implemented in C++, tested with real scenarios, and analyzed with custom-built datasets. This project is part of a six-project academic portfolio developed during graduate coursework.
 
 ---
 
-## 📂 Folder Structure
+## 📁 Repository Structure
 
 ```
-Part2/
-├── code/
-│   ├── fifo.cpp
-│   ├── optimal.cpp
-│   ├── lru.cpp
-│   ├── lfu.cpp
-│   ├── mfu.cpp
-│   └── input/                       # Reference strings for testing
-├── docs/
-│   └── Project2Report.docx
-└── README.md                        # This file
+os-design-project/
+├── Part1/                         # CPU Scheduling Algorithms
+│   ├── code/
+│   ├── docs/
+│   └── README.md
+├── Part2/                         # Page Replacement Algorithms
+│   ├── code/
+│   ├── docs/
+│   └── README.md
+└── README.md                      # (This file) Combined Overview
 ```
 
 ---
 
-## 📄 Input Format
+## ⚙️ Part 1 – CPU Scheduling Algorithms
 
-Each line in the input file is a space-separated sequence of page references:
+### 🧠 Overview
+Implements and evaluates five core CPU scheduling strategies:  
+- First-Come First-Served (FCFS)  
+- Shortest Job First (SJF)  
+- Priority Scheduling  
+- Round Robin  
+- Priority with Round Robin  
 
-```
-7 0 1 2 0 3 0 4 2 3 0 3 2
-```
-
-Files are grouped by test size (10-frame and 20-frame scenarios).
-
----
-
-## ▶️ How to Compile and Run
-
-Example for FIFO:
-```bash
-g++ fifo.cpp -o fifo
-./fifo input/ref10_1.txt input/ref10_2.txt ...
-```
-
-Repeat similarly for other algorithm files.
+Each algorithm is tested on custom datasets containing 6, 10, and 16 processes. Results focus on metrics like average waiting time and turnaround time. Outputs are generated and analyzed using Python visualization tools.
 
 ---
 
-## 📊 Results Summary (Page Faults)
+## 💾 Part 2 – Page Replacement Algorithms
 
-| Algorithm | Avg Faults (10 Frames) | Avg Faults (20 Frames) |
-|-----------|------------------------|-------------------------|
-| FIFO      | 10.2                   | 25.6                    |
-| Optimal   | 9.6                    | 21.8                    |
-| LRU       | 10.0                   | 23.4                    |
-| LFU       | 10.4                   | 23.4                    |
-| MFU       | 10.2                   | 25.6                    |
+### 🧠 Overview
+Simulates five page replacement strategies:  
+- FIFO  
+- Optimal  
+- LRU (Least Recently Used)  
+- LFU (Least Frequently Used)  
+- MFU (Most Frequently Used)  
 
-📌 **Observation:** Optimal yields the lowest page faults as expected, while LFU and LRU provide efficient real-world alternatives.
-
----
-
-## 📄 Documentation
-
-Comprehensive explanations, charts, and comparisons are available in the DOCX report.
+Each algorithm is tested with reference strings and evaluated using different frame sizes (10 and 20). The analysis focuses on the number of page faults and efficiency of real-time memory handling strategies.
 
 ---
 
-## 🧑‍💻 Contributors
+## 📈 Summary Tables
 
-- Ganesh Gundekarla  
-- Shreya Sri Bearelly  
-- Divya Sree Dandu  
-- Vikas Varala  
+### CPU Scheduling – Avg Waiting Time
+
+| Algorithm               | 6 Procs | 10 Procs | 16 Procs |
+|------------------------|---------|----------|----------|
+| FCFS                   | 44.17   | 83.24    | 136.26   |
+| SJF                    | 32.67   | 65.88    | 109.49   |
+| Priority               | 50.20   | 81.66    | 138.10   |
+| Round Robin            | 58.20   | 121.50   | 200.71   |
+| Priority + Round Robin | 50.73   | 82.44    | 138.16   |
+
+### Page Replacement – Avg Page Faults
+
+| Algorithm | 10 Frames | 20 Frames |
+|-----------|-----------|-----------|
+| FIFO      | 10.2      | 25.6      |
+| Optimal   | 9.6       | 21.8      |
+| LRU       | 10.0      | 23.4      |
+| LFU       | 10.4      | 23.4      |
+| MFU       | 10.2      | 25.6      |
 
 ---
 
-## 📘 References
+## 🧾 Learning Outcomes
 
-- Operating System Concepts, Silberschatz, Galvin & Gagne (10th Edition)
-- Research on Memory Hierarchies and Caching Policies
+- Gained hands-on experience simulating low-level OS mechanisms
+- Understood how CPU and memory scheduling impacts performance
+- Practiced software modularity, input handling, and evaluation pipelines
+- Leveraged C++ for systems programming and Python for analysis
+
+---
+
+## 📫 Contact
+
+Created by Ganesh Gundekarla  
+🔗 [LinkedIn](https://www.linkedin.com/in/ganeshgundekarla) • [GitHub](https://github.com/gnevercodes)
