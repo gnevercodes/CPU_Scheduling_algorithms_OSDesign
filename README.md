@@ -11,10 +11,17 @@ This repository contains a two-part academic project focused on Operating System
 
 ## 📁 Project Structure
 ```
-os-design-project/
-├── part1_cpu_scheduling/        # CPU scheduling algorithms (FCFS, SJF, RR, etc.)
-├── part2_memory_management/     # Page replacement algorithms (FIFO, LRU, Optimal, etc.)
-└── README.md                    # Master README
+CPU_Scheduling_algorithms_OSDesign/
+├── Part1/
+│   ├── code/
+│   ├── docs/
+│   └── README.md    Detailed details for CPU Scheduling
+├── Part2/
+│   ├── code/
+│   ├── docs/
+│   └── README.md    Detailed informationfor Page Replacement
+├── README.md        Combined overview (already done)
+                    # Master README
 ```
 
 ---
