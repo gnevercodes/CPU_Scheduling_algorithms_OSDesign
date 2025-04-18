@@ -81,8 +81,6 @@ Repeat similarly for other algorithm files.
 
 Comprehensive explanations, charts, and comparisons are available in the DOCX report.
 
-📎 [Project Report (DOCX)](docs/Project2Report.docx)
-
 ---
 
 ## 🧑‍💻 Contributors
