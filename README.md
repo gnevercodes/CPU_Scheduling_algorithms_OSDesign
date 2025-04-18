@@ -1,89 +1,100 @@
 
-# 🧠 Operating System Design – Academic Project (Fall 2024)
+# 💾 Part 2 – Memory Management: Page Replacement Algorithms
 
-## 🎓 CSCE 5640 – University of North Texas  
-**Instructor:** Prof. Amar M. Maharjan  
-**Team Members:** Ganesh Gundekarla, Shreya Sri Bearelly, Divya Sree Dandu, Vikas Varala  
+### 📌 Operating System Design Project – Fall 2024 | University of North Texas  
+🧑‍🏫 Instructor: Prof. Amar M. Maharjan  
+📁 Project 5 of 6 | Focus: Page Replacement Strategy Simulation & Evaluation
 
-This repository contains a two-part academic project focused on Operating System design, covering both CPU Scheduling and Page Replacement Algorithms. It is part of a 6-project academic portfolio and was developed as a capstone exercise to apply OS theory to real-world simulated environments using C++ and Linux.
+This project simulates and evaluates five popular page replacement algorithms to understand their efficiency in managing memory pages. Each algorithm is tested using reference strings from input files and frame sizes of 10 and 20. The results are analyzed based on the number of page faults encountered during execution.
 
 ---
 
-## 📁 Project Structure
+## 🧠 Algorithms Implemented
+
+1. **FIFO (First-In First-Out)** – Replaces the oldest page in memory.
+2. **Optimal** – Replaces the page that will not be used for the longest future duration.
+3. **LRU (Least Recently Used)** – Removes the least recently accessed page.
+4. **LFU (Least Frequently Used)** – Evicts the page with the lowest access frequency.
+5. **MFU (Most Frequently Used)** – Replaces the most frequently used page, assuming it's no longer needed.
+
+Each algorithm is implemented in a separate C++ source file and handles custom reference string input formats.
+
+---
+
+## 📂 Folder Structure
+
 ```
-CPU_Scheduling_algorithms_OSDesign/
-├── Part1/
-│   ├── code/
-│   ├── docs/
-│   └── README.md    Detailed details for CPU Scheduling
-├── Part2/
-│   ├── code/
-│   ├── docs/
-│   └── README.md    Detailed informationfor Page Replacement
-├── README.md        Combined overview (already done)
-                    # Master README
+Part2/
+├── code/
+│   ├── fifo.cpp
+│   ├── optimal.cpp
+│   ├── lru.cpp
+│   ├── lfu.cpp
+│   ├── mfu.cpp
+│   └── input/                       # Reference strings for testing
+├── docs/
+│   └── Project2Report.docx
+└── README.md                        # This file
 ```
 
 ---
 
-## 🔹 Part 1 – CPU Scheduling Algorithms
+## 📄 Input Format
 
-### 🧠 Overview
-Implements five core CPU scheduling algorithms: FCFS, SJF, Priority, Round Robin, and Priority with Round Robin. These were tested on datasets with 6, 10, and 16 processes to analyze wait time and turnaround time.
+Each line in the input file is a space-separated sequence of page references:
 
-### 🛠️ Key Features
-- Developed in C/C++ on Ubuntu
-- Input test cases with varying workload sizes
-- Output analysis includes average wait times and Gantt-like summaries
-- Result graphs generated using Python (matplotlib, pandas)
+```
+7 0 1 2 0 3 0 4 2 3 0 3 2
+```
 
-📄 [Read Full Report – Part 1](part1_cpu_scheduling/docs/Project_Report_OSD_part1.pdf)
+Files are grouped by test size (10-frame and 20-frame scenarios).
 
 ---
 
-## 🔹 Part 2 – Page Replacement Algorithms
+## ▶️ How to Compile and Run
 
-### 🧠 Overview
-Analyzes memory management strategies through five page replacement algorithms: FIFO, Optimal, LRU (Second Chance), LFU, and MFU. This simulation evaluates page faults using artificial reference strings and frame sizes (10 and 20).
+Example for FIFO:
+```bash
+g++ fifo.cpp -o fifo
+./fifo input/ref10_1.txt input/ref10_2.txt ...
+```
 
-### 🛠️ Key Features
-- Algorithms implemented in C++ and tested on Linux
-- Handles custom input files containing reference strings
-- Evaluates total page faults and page hits
-- Visual comparisons of algorithm efficiency with graphs
-
-📄 [Read Full Report – Part 2](part2_memory_management/docs/Project2Report.docx)
-
-### 📊 Results Summary
-
-| Algorithm | Avg Page Faults (10 frames) | Avg Page Faults (20 frames) |
-|-----------|-----------------------------|------------------------------|
-| FIFO      | 10.2                        | 25.6                         |
-| Optimal   | 9.6                         | 21.8                         |
-| LRU       | 10.0                        | 23.4                         |
-| LFU       | 10.4                        | 23.4                         |
-| MFU       | 10.2                        | 25.6                         |
+Repeat similarly for other algorithm files.
 
 ---
 
-## 🧾 Academic Objectives
+## 📊 Results Summary (Page Faults)
 
-- Apply theoretical concepts of CPU scheduling and memory paging in OS design
-- Simulate practical scenarios with frame/process limitations
-- Compare algorithm efficiency using statistical and visual tools
-- Emphasize modular, readable, and testable code
+| Algorithm | Avg Faults (10 Frames) | Avg Faults (20 Frames) |
+|-----------|------------------------|-------------------------|
+| FIFO      | 10.2                   | 25.6                    |
+| Optimal   | 9.6                    | 21.8                    |
+| LRU       | 10.0                   | 23.4                    |
+| LFU       | 10.4                   | 23.4                    |
+| MFU       | 10.2                   | 25.6                    |
 
----
-
-## 📌 Future Work
-- Extend simulations to support hybrid scheduling strategies
-- Explore Clock and NRU algorithms for page replacement
-- Introduce real-time dynamic reference string generation
-- Evaluate algorithms in distributed and virtual memory environments
+📌 **Observation:** Optimal yields the lowest page faults as expected, while LFU and LRU provide efficient real-world alternatives.
 
 ---
 
-## 📫 Contact
+## 📄 Documentation
 
-Developed by Ganesh Gundekarla and team  
-🔗 [LinkedIn](https://www.linkedin.com/in/ganeshgundekarla) • [GitHub](https://github.com/gnevercodes)
+Comprehensive explanations, charts, and comparisons are available in the DOCX report.
+
+📎 [Project Report (DOCX)](docs/Project2Report.docx)
+
+---
+
+## 🧑‍💻 Contributors
+
+- Ganesh Gundekarla  
+- Shreya Sri Bearelly  
+- Divya Sree Dandu  
+- Vikas Varala  
+
+---
+
+## 📘 References
+
+- Operating System Concepts, Silberschatz, Galvin & Gagne (10th Edition)
+- Research on Memory Hierarchies and Caching Policies
