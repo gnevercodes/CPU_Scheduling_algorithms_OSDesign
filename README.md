@@ -82,8 +82,8 @@ Each algorithm is tested with reference strings and evaluated using different fr
 
 - Gained hands-on experience simulating low-level OS mechanisms
 - Understood how CPU and memory scheduling impacts performance
-- Practiced software modularity, input handling, and evaluation pipelines
-- Leveraged C++ for systems programming and Python for analysis
+- Practiced software modularity, input handling, and evaluation pipelines . 
+- Leveraged C++ for systems programming and Python for analysis and executed those in linux and google colab. 
 
 ---
 
